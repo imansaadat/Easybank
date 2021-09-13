@@ -1,0 +1,123 @@
+@import url("https://fonts.googleapis.com/css2?family=Public+Sans:wght@300;400;700&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  font-family: "Public Sans", sans-serif;
+  overflow-x: hidden;
+}
+
+ul {
+  list-style-type: none;
+}
+
+a {
+  text-decoration: none;
+  color: #9D9EA2;
+  font-size: 1.6rem;
+}
+
+h1,
+h2,
+h3 {
+  font-size: 3.2rem;
+  color: #111;
+  font-weight: 400;
+}
+
+h2,
+h3 {
+  font-size: 2.4rem;
+}
+
+p {
+  color: #9D9EA2;
+  font-size: 1.6rem;
+  font-weight: 300;
+}
+
+.btn a {
+  display: inline-block;
+  border-radius: 2.5rem;
+  color: #fff;
+  padding: 1rem 2rem;
+  background: #00f260;
+  /* fallback for old browsers */
+  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to left, #2cbac7, #00f260);
+}
+
+.container {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 30px;
+}
+
+/* main nav */
+.header {
+  background-color: #fff;
+  position: relative;
+  z-index: 10;
+}
+.header .header_content .main_menu {
+  display: grid;
+  height: 5rem;
+  grid-template-columns: 1fr 4fr 1fr;
+  justify-content: center;
+  align-items: center;
+}
+.header .header_content .main_menu .logo img {
+  max-width: 12rem;
+}
+.header .header_content .main_menu .list_items {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.header .header_content .main_menu .list_items li {
+  margin: 0 2rem;
+}
+
+/*showcase*/
+.showcase {
+  width: 100%;
+  height: 70rem;
+  background-color: #FAFAFA;
+  position: relative;
+}
+.showcase .bg_intro {
+  position: absolute;
+  width: 30rem;
+  right: 55rem;
+  top: -25rem;
+}
+.showcase .showcase_content {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  align-items: center;
+  justify-content: space-between;
+}
+.showcase .showcase_content .text_content h1 {
+  margin-bottom: 1.7rem;
+}
+.showcase .showcase_content .text_content p {
+  max-width: 35rem;
+  margin-bottom: 2.5rem;
+  line-height: 2.2rem;
+}
+.showcase .showcase_content .image {
+  position: relative;
+  z-index: 2;
+  top: -5rem;
+  left: 24rem;
+}
+.showcase .showcase_content .image img {
+  width: 100%;
+}/*# sourceMappingURL=style.css.map */
