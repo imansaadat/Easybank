@@ -1,5 +1,6 @@
 @use '../_sass/variable'as *;
 @import url("https://fonts.googleapis.com/css2?family=Public+Sans:wght@300;400;700&display=swap");
+@import '../font-icons/css/fontello.css';
 * {
   margin: 0;
   padding: 0;
@@ -12,6 +13,9 @@ html {
 
 body {
   font-family: "Public Sans", sans-serif;
+  &.overflow{
+    overflow-y: hidden;
+  }
 }
 
 ul {
@@ -51,7 +55,9 @@ p {
     display: inline-block;
     border-radius: 2.5rem;
     color: #fff;
-    padding: 1rem 2rem;
+    min-width: 140px;
+    padding: 1rem 0;
+    text-align: center;
     background: #00f260; /* fallback for old browsers */
     background: -webkit-linear-gradient(
       to left,
@@ -99,6 +105,9 @@ p {
       }
       .hamburger{
         display: none;
+        i{
+          font-size: 2.8rem;
+        }
       }
      
     }
@@ -262,9 +271,6 @@ p {
           margin: 0 4rem;
           li{
             line-height: 2.5rem;
-            a{
-             
-            }
           }
         }
       }
@@ -278,12 +284,6 @@ p {
 }
 
 /* responsive styles */
-@media (max-width: 1200px) {
-  .container {
-    min-width: 100%;
-    padding: 0 30px;
-  }
-}
 @media (max-width: 768px) {
   /* main nav */
 .header {
@@ -301,8 +301,12 @@ p {
       }
       .list_items {
         display: none;
+        width: 100%;
         flex-direction: column;
-        padding-top: 2rem;
+        padding: 2rem 0;
+        position: absolute;
+        background: #fff;
+        top: 100%;
         li {
           margin: 1rem 0;
         }
@@ -316,7 +320,7 @@ p {
       .hamburger{
         display: block;
         position: absolute;
-        top: 2.5rem;
+        top: 1.2rem;
         right: 3.5rem;
         cursor: pointer;
       }
