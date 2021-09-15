@@ -1,4 +1,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Public+Sans:wght@300;400;700&display=swap");
+/*
+* Color Palette
+*/
 * {
   margin: 0;
   padding: 0;
@@ -11,7 +14,6 @@ html {
 
 body {
   font-family: "Public Sans", sans-serif;
-  overflow-x: hidden;
 }
 
 ul {
@@ -20,29 +22,37 @@ ul {
 
 a {
   text-decoration: none;
-  color: #9D9EA2;
+  color: #9d9ea2;
   font-size: 1.6rem;
+  transition: 0.3s;
+}
+a:hover {
+  color: #33D35E;
 }
 
 h1,
 h2,
 h3 {
   font-size: 3.2rem;
-  color: #111;
+  color: #2E3046;
   font-weight: 400;
 }
 
 h2,
 h3 {
-  font-size: 2.4rem;
+  font-size: 2.6rem;
 }
 
 p {
-  color: #9D9EA2;
+  color: #9d9ea2;
   font-size: 1.6rem;
   font-weight: 300;
+  line-height: 2.2rem;
 }
 
+.btn {
+  text-align: right;
+}
 .btn a {
   display: inline-block;
   border-radius: 2.5rem;
@@ -52,10 +62,14 @@ p {
   /* fallback for old browsers */
   /* Chrome 10-25, Safari 5.1-6 */
   background: linear-gradient(to left, #2cbac7, #00f260);
+  transition: 0.3s;
+}
+.btn a:hover {
+  opacity: 0.8;
 }
 
 .container {
-  max-width: 1100px;
+  max-width: 1200px;
   margin: 0 auto;
   padding: 0 30px;
 }
@@ -68,7 +82,7 @@ p {
 }
 .header .header_content .main_menu {
   display: grid;
-  height: 5rem;
+  height: 6rem;
   grid-template-columns: 1fr 4fr 1fr;
   justify-content: center;
   align-items: center;
@@ -84,25 +98,31 @@ p {
 .header .header_content .main_menu .list_items li {
   margin: 0 2rem;
 }
+.header .header_content .main_menu .hamburger {
+  display: none;
+}
 
 /*showcase*/
 .showcase {
   width: 100%;
-  height: 70rem;
-  background-color: #FAFAFA;
+  background-color: #fafafa;
   position: relative;
+  overflow: hidden;
 }
 .showcase .bg_intro {
   position: absolute;
-  width: 30rem;
-  right: 55rem;
-  top: -25rem;
+  right: 0;
+  top: 0;
+  z-index: 0;
 }
 .showcase .showcase_content {
-  display: grid;
-  grid-template-columns: 1fr 2fr;
-  align-items: center;
+  position: relative;
+  display: flex;
   justify-content: space-between;
+  align-items: center;
+}
+.showcase .showcase_content .text_content {
+  width: 50%;
 }
 .showcase .showcase_content .text_content h1 {
   margin-bottom: 1.7rem;
@@ -110,14 +130,267 @@ p {
 .showcase .showcase_content .text_content p {
   max-width: 35rem;
   margin-bottom: 2.5rem;
-  line-height: 2.2rem;
 }
 .showcase .showcase_content .image {
+  width: 50%;
   position: relative;
-  z-index: 2;
-  top: -5rem;
-  left: 24rem;
+  top: -6.2rem;
+  left: 16rem;
 }
 .showcase .showcase_content .image img {
   width: 100%;
+}
+.showcase .showcase_content .btn {
+  text-align: left;
+}
+
+/*why Easybank*/
+.why_easybank {
+  background-color: #f4f5f7;
+  padding: 5rem 0;
+}
+.why_easybank .title {
+  margin-bottom: 2rem;
+}
+.why_easybank .title h2 {
+  margin-bottom: 2rem;
+}
+.why_easybank .title p {
+  max-width: 45rem;
+}
+.why_easybank .items {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(24rem, 1fr));
+  justify-content: center;
+  align-items: center;
+  grid-gap: 2.5rem;
+}
+.why_easybank .items .item .item_image {
+  margin-bottom: 2.5rem;
+}
+.why_easybank .items .item .item_image img {
+  max-width: 100%;
+}
+.why_easybank .items .item h4 {
+  font-size: 1.6rem;
+  margin-bottom: 1.5rem;
+  font-weight: 400;
+}
+
+/* Latest Articles */
+.latest_articles {
+  padding: 8rem 0;
+  background-color: #fafafa;
+}
+.latest_articles .title {
+  margin-bottom: 3.5rem;
+}
+.latest_articles .cards {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-gap: 2rem;
+}
+.latest_articles .cards .card {
+  background-color: #fff;
+  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+  -webkit-box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+}
+.latest_articles .cards .card .card_thumbnai img {
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+  width: 100%;
+  min-height: 18.5rem;
+  max-height: 18.5rem;
+}
+.latest_articles .cards .card .card_content {
+  padding: 2.5rem;
+}
+.latest_articles .cards .card .card_content h4 {
+  color: #9d9ea2;
+  margin-bottom: 1.2rem;
+}
+.latest_articles .cards .card .card_content h3 {
+  font-size: 1.6rem;
+  margin-bottom: 1rem;
+}
+.latest_articles .cards .card .card_content p {
+  font-size: 1.4rem;
+  line-height: 2rem;
+}
+
+/* footer */
+.footer {
+  background-color: #2D314E;
+  padding: 3rem 0;
+}
+.footer .footer_content {
+  display: grid;
+  grid-template-columns: 1fr 3fr 1fr;
+  align-items: center;
+  justify-content: center;
+}
+.footer .footer_content .logo_media .logo_footer {
+  margin-bottom: 3.2rem;
+}
+.footer .footer_content .logo_media .media a {
+  margin: 0.4rem;
+}
+.footer .footer_content .logo_media .media a img {
+  transition: 0.3s;
+}
+.footer .footer_content .logo_media .media a:hover img {
+  transform: translateY(-0.5rem);
+}
+.footer .footer_content .footer_links {
+  display: flex;
+  align-items: center;
+}
+.footer .footer_content .footer_links .list_items {
+  margin: 0 4rem;
+}
+.footer .footer_content .footer_links .list_items li {
+  line-height: 2.5rem;
+}
+.footer .footer_content .btn .copyRight {
+  margin-top: 2rem;
+  color: #fff;
+}
+
+/* responsive styles */
+@media (max-width: 1200px) {
+  .container {
+    min-width: 100%;
+    padding: 0 30px;
+  }
+}
+@media (max-width: 768px) {
+  /* main nav */
+  .header .header_content .main_menu {
+    padding: 2rem 0;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+  }
+  .header .header_content .main_menu .logo {
+    align-self: start;
+  }
+  .header .header_content .main_menu .logo img {
+    max-width: 12rem;
+  }
+  .header .header_content .main_menu .list_items {
+    display: none;
+    flex-direction: column;
+    padding-top: 2rem;
+  }
+  .header .header_content .main_menu .list_items li {
+    margin: 1rem 0;
+  }
+  .header .header_content .main_menu .list_items.show {
+    display: flex;
+  }
+  .header .header_content .main_menu .btn {
+    display: none;
+  }
+  .header .header_content .main_menu .hamburger {
+    display: block;
+    position: absolute;
+    top: 2.5rem;
+    right: 3.5rem;
+    cursor: pointer;
+  }
+
+  .showcase {
+    padding: 4rem 0;
+  }
+  .showcase .bg_intro {
+    display: none;
+  }
+  .showcase .showcase_content {
+    display: grid;
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+  .showcase .showcase_content .text_content {
+    margin-top: 2rem;
+    width: 100%;
+    order: 1;
+  }
+  .showcase .showcase_content .text_content h1 {
+    font-size: 2.4rem;
+  }
+  .showcase .showcase_content .text_content p {
+    max-width: 39rem;
+    margin: 2.5rem auto;
+  }
+  .showcase .showcase_content .text_content .btn {
+    text-align: center;
+  }
+  .showcase .showcase_content .image {
+    width: 50%;
+    margin: auto;
+    position: static;
+  }
+
+  /*why Easybank*/
+  .why_easybank .title {
+    text-align: center;
+  }
+  .why_easybank .title h2 {
+    margin-bottom: 2rem;
+    font-size: 2.4rem;
+  }
+  .why_easybank .title p {
+    max-width: 45rem;
+    margin: auto;
+  }
+  .why_easybank .items {
+    text-align: center;
+  }
+  .why_easybank .items .item h4 {
+    font-size: 1.6rem;
+  }
+
+  /* Latest Articles */
+  .latest_articles .title {
+    text-align: center;
+    margin-bottom: 3.5rem;
+  }
+  .latest_articles .title h2 {
+    font-size: 2.4rem;
+  }
+  .latest_articles .cards {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  /*footer*/
+  .footer .footer_content {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+}
+@media (max-width: 576px) {
+  /* Latest Articles */
+  .latest_articles .cards {
+    grid-template-columns: 1fr;
+  }
+
+  /*footer*/
+  .footer .footer_content {
+    grid-template-columns: 1fr;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+  }
+  .footer .footer_content .logo_media {
+    margin-bottom: 2rem;
+  }
+  .footer .footer_content .footer_links {
+    flex-direction: column;
+    margin-bottom: 2rem;
+  }
+  .footer .footer_content .footer_links .list_items li {
+    line-height: 3rem;
+  }
+  .footer .footer_content .btn {
+    text-align: center;
+  }
 }/*# sourceMappingURL=style.css.map */

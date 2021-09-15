@@ -1,3 +1,4 @@
+@use '../_sass/variable'as *;
 @import url("https://fonts.googleapis.com/css2?family=Public+Sans:wght@300;400;700&display=swap");
 * {
   margin: 0;
@@ -11,7 +12,6 @@ html {
 
 body {
   font-family: "Public Sans", sans-serif;
-  overflow-x: hidden;
 }
 
 ul {
@@ -20,26 +20,33 @@ ul {
 
 a {
   text-decoration: none;
-  color: #9D9EA2;
+  color: $Text_Color;
   font-size: 1.6rem;
+  transition: .3s;
+  &:hover{
+    color: $Hover_links;
+  }
 }
 h1,
 h2,
 h3 {
   font-size: 3.2rem;
-  color: #111;
+  color: $Title_color;
   font-weight: 400;
 }
 h2,
 h3 {
-  font-size: 2.4rem;
+  font-size: 2.6rem;
 }
 p {
-  color: #9D9EA2;
+  color:$Text_Color;
   font-size: 1.6rem;
   font-weight: 300;
+  line-height: 2.2rem;
+  
 }
 .btn {
+  text-align: right;
   a {
     display: inline-block;
     border-radius: 2.5rem;
@@ -51,16 +58,16 @@ p {
       #2cbac7,
       #00f260
     ); /* Chrome 10-25, Safari 5.1-6 */
-    background: linear-gradient(
-      to left,
-      #2cbac7,
-      #00f260
-    );
+    background: linear-gradient(to left, #2cbac7, #00f260);
+    transition: .3s;
+    &:hover{
+      opacity: .8;
+    }
   }
 }
 
 .container {
-  max-width: 1100px;
+  max-width: 1200px;
   margin: 0 auto;
   padding: 0 30px;
 }
@@ -73,12 +80,11 @@ p {
   .header_content {
     .main_menu {
       display: grid;
-      height: 5rem;
+      height: 6rem;
       grid-template-columns: 1fr 4fr 1fr;
       justify-content: center;
       align-items: center;
       .logo {
-       
         img {
           max-width: 12rem;
         }
@@ -91,49 +97,340 @@ p {
           margin: 0 2rem;
         }
       }
+      .hamburger{
+        display: none;
+      }
+     
     }
   }
 }
 
 /*showcase*/
 .showcase {
-    width: 100%;
-    height: 70rem;
-    background-color: #FAFAFA;
-    position: relative;
-   
-    .bg_intro{
-        position: absolute;
-        width:30rem;
-        right: 55rem;
-        top: -25rem;
-    }
+  width: 100%;
+  background-color: #fafafa;
+  position: relative;
+  overflow: hidden;
+  .bg_intro {
+    position: absolute;
+    right: 0;
+    top: 0;
+    z-index: 0;
+  }
+
   .showcase_content {
-   
-    display: grid;
-    grid-template-columns: 1fr 2fr;
-    align-items: center;
+    position: relative;
+    display: flex;
     justify-content: space-between;
+    align-items: center;
     .text_content {
-        
-      h1{
+      width: 50%;
+
+      h1 {
         margin-bottom: 1.7rem;
       }
-      p{
+      p {
         max-width: 35rem;
-         margin-bottom: 2.5rem;
-         line-height: 2.2rem;
+        margin-bottom: 2.5rem;
       }
     }
-
     .image {
-        position: relative;
-        z-index: 2;
-        top: -5rem;
-        left: 24rem;
+      width: 50%;
+      position: relative;
+      top: -6.2rem;
+      left: 16rem;
       img {
         width: 100%;
       }
+    }
+    .btn{
+      text-align: left;
+    }
+  }
+}
+
+/*why Easybank*/
+.why_easybank {
+  background-color: #f4f5f7;
+  padding: 5rem 0;
+  .title {
+    margin-bottom: 2rem;
+    h2 {
+      margin-bottom: 2rem;
+    }
+    p {
+      max-width: 45rem;
+    }
+  }
+  .items {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(24rem, 1fr));
+    justify-content: center;
+    align-items: center;
+    grid-gap: 2.5rem;
+    .item {
+      .item_image {
+        margin-bottom: 2.5rem;
+        img {
+          max-width: 100%;
+        }
+      }
+      h4 {
+        font-size: 1.6rem;
+        margin-bottom: 1.5rem;
+        font-weight: 400;
+      }
+    }
+  }
+}
+
+/* Latest Articles */
+.latest_articles {
+  padding: 8rem 0;
+  background-color: #fafafa;
+  .title {
+    margin-bottom: 3.5rem;
+  }
+  .cards {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-gap: 2rem;
+    .card {
+      background-color: #fff;
+      box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+      -webkit-box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+      .card_thumbnai {
+        img {
+          border-top-left-radius: 5px;
+          border-top-right-radius: 5px;
+          width: 100%;
+          min-height: 18.5rem;
+          max-height: 18.5rem;
+        }
+      }
+      .card_content {
+        padding: 2.5rem;
+        h4 {
+          color: $Text_Color;
+          margin-bottom: 1.2rem;
+        }
+        h3 {
+          font-size: 1.6rem;
+          margin-bottom: 1rem;
+        }
+        p {
+          font-size: 1.4rem;
+          line-height: 2rem;
+        }
+      }
+    }
+  }
+}
+
+
+/* footer */ 
+.footer{
+  background-color:#2D314E;
+  padding: 3rem 0;
+  .footer_content{
+      display: grid;
+      grid-template-columns: 1fr 3fr 1fr;
+      align-items: center;
+      justify-content: center;
+      .logo_media{
+         .logo_footer{
+           margin-bottom: 3.2rem;
+         }
+         .media{
+            a{
+              margin: 0.4rem;
+              img{
+                transition: .3s;
+              }
+              &:hover{
+                 img{
+                   transform: translateY(-.5rem);
+                 }
+               }
+            }
+         }
+      }
+      .footer_links{
+        display: flex;
+        align-items: center;
+        .list_items{
+          margin: 0 4rem;
+          li{
+            line-height: 2.5rem;
+            a{
+             
+            }
+          }
+        }
+      }
+      .btn{
+        .copyRight{
+            margin-top: 2rem;
+            color: #fff;
+        }
+      }
+  }
+}
+
+/* responsive styles */
+@media (max-width: 1200px) {
+  .container {
+    min-width: 100%;
+    padding: 0 30px;
+  }
+}
+@media (max-width: 768px) {
+  /* main nav */
+.header {
+  .header_content {
+    .main_menu {
+      padding: 2rem 0;
+      height: auto;
+      display: flex;
+      flex-direction:column;
+      .logo {
+        align-self: start;
+        img {
+          max-width: 12rem;
+        }
+      }
+      .list_items {
+        display: none;
+        flex-direction: column;
+        padding-top: 2rem;
+        li {
+          margin: 1rem 0;
+        }
+        &.show{
+          display: flex;
+        }
+      }
+      .btn{
+       display: none;
+      }
+      .hamburger{
+        display: block;
+        position: absolute;
+        top: 2.5rem;
+        right: 3.5rem;
+        cursor: pointer;
+      }
+    }
+  }
+}
+  .showcase {
+    padding: 4rem 0;
+    .bg_intro {
+      display: none;
+    }
+
+    .showcase_content {
+      display: grid;
+      grid-template-columns: 1fr;
+      text-align: center;
+      .text_content {
+        
+        margin-top: 2rem;
+        width: 100%;
+        order: 1;
+        h1 {
+          font-size: 2.4rem;
+        }
+        p {
+          max-width: 39rem;
+          margin: 2.5rem auto;
+        }
+        .btn{
+          text-align: center;
+        }
+      }
+      .image {
+        width: 50%;
+        margin: auto;
+        position: static;
+      }
+    }
+  }
+
+  /*why Easybank*/
+  .why_easybank {
+    .title {
+      text-align: center;
+      h2 {
+        margin-bottom: 2rem;
+        font-size: 2.4rem;
+      }
+      p {
+        max-width: 45rem;
+        margin: auto;
+      }
+    }
+    .items {
+      text-align: center;
+      .item {
+        h4 {
+          font-size: 1.6rem;
+        }
+      }
+    }
+  }
+
+  /* Latest Articles */
+  .latest_articles {
+    .title {
+      text-align: center;
+      margin-bottom: 3.5rem;
+      h2 {
+        font-size: 2.4rem;
+      }
+    }
+    .cards {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+   /*footer*/ 
+  .footer{
+    .footer_content{
+        grid-template-columns: 1fr 1fr 1fr;
+    }
+  }
+}
+
+@media (max-width: 576px){
+   /* Latest Articles */
+   .latest_articles {
+    .cards {
+      grid-template-columns: 1fr;
+    }
+  }
+  /*footer*/ 
+  .footer{
+    .footer_content{
+        grid-template-columns: 1fr;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        .logo_media{
+          margin-bottom: 2rem;
+          
+        }
+        .footer_links{
+          flex-direction: column;
+          margin-bottom: 2rem;
+          .list_items{
+            li{
+              line-height: 3rem;
+            }
+          } 
+        }
+        .btn{
+          text-align: center;
+        }
     }
   }
 }
