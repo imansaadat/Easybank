@@ -16,10 +16,6 @@ html {
 body {
   font-family: "Public Sans", sans-serif;
 }
-body.overflow {
-  overflow-y: hidden;
-}
-
 ul {
   list-style-type: none;
 }
@@ -215,6 +211,7 @@ p {
   padding: 2.5rem;
 }
 .latest_articles .cards .card .card_content h4 {
+  font-size: 1.2rem;
   color: #9d9ea2;
   margin-bottom: 1.2rem;
 }
@@ -281,19 +278,33 @@ p {
     max-width: 12rem;
   }
   .header .header_content .main_menu .list_items {
-    display: none;
     width: 100%;
     flex-direction: column;
     padding: 2rem 0;
     position: absolute;
     background: #fff;
     top: 100%;
+    transform: scale(1, 0);
+    transform-origin: top;
+    transition: 200ms ease-in-out 200ms;
   }
   .header .header_content .main_menu .list_items li {
     margin: 1rem 0;
   }
+  .header .header_content .main_menu .list_items li a {
+    opacity: 0;
+    transition: 100ms ease-in-out;
+  }
+  .header .header_content .main_menu .list_items li a:hover {
+    transition: 0.3s;
+  }
   .header .header_content .main_menu .list_items.show {
-    display: flex;
+    transform: scale(1, 1);
+    transition: 200ms ease-in-out;
+  }
+  .header .header_content .main_menu .list_items.show a {
+    opacity: 1;
+    transition: 200ms ease-in-out 200ms;
   }
   .header .header_content .main_menu .btn {
     display: none;
